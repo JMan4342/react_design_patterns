@@ -1,7 +1,17 @@
-// *** SPLITSCREEN DEMO ***
-// *** SPLITSCREEN DEMO ***
-
 // import { SplitScreen } from "./SplitScreen";
+
+import { LargePersonListItem } from "./people/LargePersonListItem";
+import { SmallPersonListItem } from "./people/SmallPersonListItem";
+import { SmallProductListItem } from "./products/SmallProductListItem";
+import { LargeProductListItem } from "./products/LargeProductListItem";
+import { NumberedList } from "./NumberedList";
+import { RegularList } from "./RegularList";
+
+import { Modal } from "./Modal";
+
+
+// *** SPLITSCREEN DEMO ***
+// *** SPLITSCREEN DEMO ***
 
 // const LeftHandComponent = () => {
 //   return <h1 style={{ backgroundColor: "green" }}>Left!</h1>;
@@ -22,13 +32,6 @@
 
 // *** LIST AND LISTITEMS DEMO ***
 // *** LIST AND LISTITEMS DEMO ***
-
-import { LargePersonListItem } from "./people/LargePersonListItem";
-import { SmallPersonListItem } from "./people/SmallPersonListItem";
-import { SmallProductListItem } from "./products/SmallProductListItem";
-import { LargeProductListItem } from "./products/LargeProductListItem";
-import { NumberedList } from "./NumberedList";
-import { RegularList } from "./RegularList";
 
 const people = [
   {
@@ -72,30 +75,43 @@ const products = [
   },
 ];
 
+// function App() {
+//   return (
+//     <>
+//       <RegularList
+//         items={people}
+//         resourceName="person"
+//         itemComponent={SmallPersonListItem}
+//       />
+//       <NumberedList
+//         items={people}
+//         resourceName="person"
+//         itemComponent={LargePersonListItem}
+//       />
+//       <RegularList
+//         items={products}
+//         resourceName="product"
+//         itemComponent={SmallProductListItem}
+//       />
+//       <NumberedList
+//         items={products}
+//         resourceName="product"
+//         itemComponent={LargeProductListItem}
+//       />
+//     </>
+//   );
+// }
+
+
+// ***** MODAL DEMO *****
+// ***** MODAL DEMO *****
+
 function App() {
   return (
     <>
-      <RegularList
-        items={people}
-        resourceName="person"
-        itemComponent={SmallPersonListItem}
-      />
-      <NumberedList
-        items={people}
-        resourceName="person"
-        itemComponent={LargePersonListItem}
-      />
-      <RegularList
-        items={products}
-        resourceName="product"
-        itemComponent={SmallProductListItem}
-      />
-            <NumberedList
-        items={products}
-        resourceName="product"
-        itemComponent={LargeProductListItem}
-      />
-
+      <Modal>
+        <LargeProductListItem product={products[0]} />
+      </Modal>
     </>
   );
 }
