@@ -17,8 +17,11 @@ import { ResourceLoader } from "./ResourceLoader";
 import { UserInfo } from "./UserInfo";
 import { ProductInfo } from "./ProductInfo";
 
+import { useState } from "react";
 import { UncontrolledForm } from "./UncontrolledForm";
 import { ControlledForm } from "./ControlledForm";
+import { UncontrolledModal } from "./UncontrolledModal";
+import { ControlledModal } from "./ControlledModal";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -156,8 +159,20 @@ import { ControlledForm } from "./ControlledForm";
 // ******  CONTROLLED AND UNCONTROLLED REACT COMPONENTS  *****
 
 function App() {
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+
   return (
-    <ControlledForm />
+    <>
+      <ControlledModal
+        shouldShow={shouldShowModal}
+        onRequestClose={() => setShouldShowModal(false)}
+      >
+        <h1>Hello!</h1>
+      </ControlledModal>
+      <button onClick={() => setShouldShowModal(!shouldShowModal)}>
+        {shouldShowModal ? "Hide Modal" : "Show Modal"}
+      </button>
+    </>
   );
 }
 
