@@ -18,6 +18,7 @@ import { UserInfo } from "./UserInfo";
 import { ProductInfo } from "./ProductInfo";
 
 import { UncontrolledForm } from "./UncontrolledForm";
+import { ControlledForm } from "./ControlledForm";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -155,7 +156,9 @@ import { UncontrolledForm } from "./UncontrolledForm";
 // ******  CONTROLLED AND UNCONTROLLED REACT COMPONENTS  *****
 
 function App() {
-  return <UncontrolledForm />;
+  return (
+    <ControlledForm />
+  );
 }
 
 export default App;
