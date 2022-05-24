@@ -24,6 +24,7 @@ import { UncontrolledModal } from "./UncontrolledModal";
 import { ControlledModal } from "./ControlledModal";
 
 import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
+import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -196,22 +197,33 @@ const StepTwo = ({ goToNext }) => (
 const StepThree = ({ goToNext }) => (
   <>
     <h1>Step 3</h1>
+    <p>Congratulations! You qualify for our senior discount</p>
+    <button onClick={() => goToNext({})}>Next</button>
+  </>
+);
+const StepFour = ({ goToNext }) => (
+  <>
+    <h1>Step 4</h1>
     <button onClick={() => goToNext({ hairColor: "brown" })}>Next</button>
   </>
 );
 
 function App() {
+  const [onboardingData, setOnboardingData] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const onNext = (stepData) => {
+    setOnboardingData({ ...onboardingData, ...stepData });
+    setCurrentIndex(currentIndex + 1);
+  };
+
   return (
-    <UncontrolledOnboardingFlow
-      onFinish={(data) => {
-        console.log(data);
-        alert("Onboarding completed");
-      }}
-    >
+    <ControlledOnboardingFlow currentIndex={currentIndex} onNext={onNext}>
       <StepOne />
       <StepTwo />
-      <StepThree />
-    </UncontrolledOnboardingFlow>
+      {onboardingData.age >= 62 && <StepThree />}
+      <StepFour />
+    </ControlledOnboardingFlow>
   );
 }
 
