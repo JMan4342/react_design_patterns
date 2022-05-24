@@ -17,6 +17,8 @@ import { ResourceLoader } from "./ResourceLoader";
 import { UserInfo } from "./UserInfo";
 import { ProductInfo } from "./ProductInfo";
 
+import { UncontrolledForm } from "./UncontrolledForm";
+
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
 
@@ -125,28 +127,35 @@ import { ProductInfo } from "./ProductInfo";
 // ***** CONTAINER COMPONENTS ******
 // ***** CONTAINER COMPONENTS ******
 
-const getServerData = (url) => async () => {
-  const response = await axios.get(url);
-  return response.data;
-};
+// const getServerData = (url) => async () => {
+//   const response = await axios.get(url);
+//   return response.data;
+// };
 
-const getLocalStorageData = (key) => () => {
-  return localStorage.getItem(key);
-};
+// const getLocalStorageData = (key) => () => {
+//   return localStorage.getItem(key);
+// };
 
-const Text = ({ message }) => <h1>{message}</h1>;
+// const Text = ({ message }) => <h1>{message}</h1>;
+
+// function App() {
+//   return (
+//     <>
+//       <DataSource getDataFunc={getServerData("/users/123")} resourceName="user">
+//         <UserInfo />
+//       </DataSource>
+//       <DataSource getDataFunc={getLocalStorageData('message')} resourceName="message">
+//         <Text />
+//       </DataSource>
+//     </>
+//   );
+// }
+
+// ******  CONTROLLED AND UNCONTROLLED REACT COMPONENTS  *****
+// ******  CONTROLLED AND UNCONTROLLED REACT COMPONENTS  *****
 
 function App() {
-  return (
-    <>
-      <DataSource getDataFunc={getServerData("/users/123")} resourceName="user">
-        <UserInfo />
-      </DataSource>
-      <DataSource getDataFunc={getLocalStorageData('message')} resourceName="message">
-        <Text />
-      </DataSource>
-    </>
-  );
+  return <UncontrolledForm />;
 }
 
 export default App;
