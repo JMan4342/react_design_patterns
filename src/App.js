@@ -27,6 +27,7 @@ import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
 import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 
 import { printProps } from "./printProps";
+import { withUser } from "./withUser";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -232,12 +233,12 @@ import { printProps } from "./printProps";
 // *****  HIGHER-ORDER COMPONENTS *****
 // *****  HIGHER-ORDER COMPONENTS *****
 
-const UserInfoWrapped = printProps(UserInfo);
+const UserInfoWithLoader = withUser(UserInfo, '234');
 
 function App() {
   return (
     <>
-      <UserInfoWrapped a={1} b="Hello" c={{ name: "Shaun" }} />
+      <UserInfoWithLoader />
     </>
   );
 }
