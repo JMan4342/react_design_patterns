@@ -28,6 +28,7 @@ import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 
 import { printProps } from "./printProps";
 import { withUser } from "./withUser";
+import { UserInfoForm } from "./UserInfoForm";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -238,7 +239,7 @@ const UserInfoWithLoader = withUser(UserInfo, '234');
 function App() {
   return (
     <>
-      <UserInfoWithLoader />
+      <UserInfoForm />
     </>
   );
 }

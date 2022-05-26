@@ -19,7 +19,7 @@ export const withEditableUser = (Component, userId) => {
     };
 
     const onSaveUser = async () => {
-      const response = await axios.post(`/user/${userId}`, { user });
+      const response = await axios.post(`/users/${userId}`, { user });
       setOriginalUser(response.data);
       setUser(response.data);
     };
