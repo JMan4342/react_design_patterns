@@ -234,12 +234,25 @@ import { UserInfoForm } from "./UserInfoForm";
 // *****  HIGHER-ORDER COMPONENTS *****
 // *****  HIGHER-ORDER COMPONENTS *****
 
-const UserInfoWithLoader = withUser(UserInfo, '234');
+// const UserInfoWithLoader = withUser(UserInfo, '234');
+
+// function App() {
+//   return (
+//     <>
+//       <UserInfoForm />
+//     </>
+//   );
+// }
+
+// *****  CUSTOM HOOKS  *****
+// *****  CUSTOM HOOKS  *****
 
 function App() {
   return (
     <>
-      <UserInfoForm />
+      <UserInfo userId="123" />
+      <UserInfo userId="234" />
+      <UserInfo userId="345" />
     </>
   );
 }
