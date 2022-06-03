@@ -14,9 +14,9 @@ export const Button = ({ size, color, text, ...props }) => {
 };
 
 export const DangerButton = (props) => {
-  return <Button {...props} color="red" />;
+  return <Button {...props} size="large" color="red" />;
 };
 
 export const BigSuccessButton = (props) => {
-  return <Button {...props} size="large" color="green" />;
+  return <Button {...props} color="teal" />;
 };
