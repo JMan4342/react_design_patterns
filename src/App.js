@@ -1,34 +1,36 @@
 // import { SplitScreen } from "./SplitScreen";
 
-import { LargePersonListItem } from "./people/LargePersonListItem";
-import { SmallPersonListItem } from "./people/SmallPersonListItem";
-import { SmallProductListItem } from "./products/SmallProductListItem";
-import { LargeProductListItem } from "./products/LargeProductListItem";
-import { NumberedList } from "./NumberedList";
-import { RegularList } from "./RegularList";
+// import { LargePersonListItem } from "./people/LargePersonListItem";
+// import { SmallPersonListItem } from "./people/SmallPersonListItem";
+// import { SmallProductListItem } from "./products/SmallProductListItem";
+// import { LargeProductListItem } from "./products/LargeProductListItem";
+// import { NumberedList } from "./NumberedList";
+// import { RegularList } from "./RegularList";
 
-import { Modal } from "./Modal";
+// import { Modal } from "./Modal";
 
-import axios from "axios";
-import { CurrentUserLoader } from "./CurrentUserLoader";
-import { UserLoader } from "./UserLoader";
-import { DataSource } from "./DataSource";
-import { ResourceLoader } from "./ResourceLoader";
-import { UserInfo } from "./UserInfo";
-import { ProductInfo } from "./ProductInfo";
+// import axios from "axios";
+// import { CurrentUserLoader } from "./CurrentUserLoader";
+// import { UserLoader } from "./UserLoader";
+// import { DataSource } from "./DataSource";
+// import { ResourceLoader } from "./ResourceLoader";
+// import { UserInfo } from "./UserInfo";
+// import { ProductInfo } from "./ProductInfo";
 
-import { useState } from "react";
-import { UncontrolledForm } from "./UncontrolledForm";
-import { ControlledForm } from "./ControlledForm";
-import { UncontrolledModal } from "./UncontrolledModal";
-import { ControlledModal } from "./ControlledModal";
+// import { useState } from "react";
+// import { UncontrolledForm } from "./UncontrolledForm";
+// import { ControlledForm } from "./ControlledForm";
+// import { UncontrolledModal } from "./UncontrolledModal";
+// import { ControlledModal } from "./ControlledModal";
 
-import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
-import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
+// import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
+// import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 
-import { printProps } from "./printProps";
-import { withUser } from "./withUser";
-import { UserInfoForm } from "./UserInfoForm";
+// import { printProps } from "./printProps";
+// import { withUser } from "./withUser";
+// import { UserInfoForm } from "./UserInfoForm";
+
+import { RecursiveComponent } from "./RecursiveComponent";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -247,12 +249,43 @@ import { UserInfoForm } from "./UserInfoForm";
 // *****  CUSTOM HOOKS  *****
 // *****  CUSTOM HOOKS  *****
 
+// function App() {
+//   return (
+//     <>
+//       <UserInfo userId="123" />
+//       <ProductInfo productId="1234" />
+//     </>
+//   );
+// }
+
+// ***** FUNCTIONAL PROGRAMMING *****
+// ***** FUNCTIONAL PROGRAMMING *****
+
+const nestedObject = {
+  a: 1,
+  b: {
+    b1: 4,
+    b2: {
+      b23: "Hello",
+    },
+    b3: {
+      b31: {
+        message: "Hi",
+      },
+      b32: {
+        message: "Hi",
+      },
+    },
+  },
+  c: {
+    c1: 2,
+    c2: 3,
+  },
+};
+
 function App() {
   return (
-    <>
-      <UserInfo userId="123" />
-      <ProductInfo productId="1234" />
-    </>
+    <RecursiveComponent data={nestedObject} />
   );
 }
 
