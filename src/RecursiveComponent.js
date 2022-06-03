@@ -13,7 +13,7 @@ export const RecursiveComponent = ({ data }) => {
         <li>
           {key}:
           <ul>
-            <RecursiveComponent data={data} />
+            <RecursiveComponent data={value} />
           </ul>
         </li>
       ))}

@@ -31,6 +31,7 @@
 // import { UserInfoForm } from "./UserInfoForm";
 
 import { RecursiveComponent } from "./RecursiveComponent";
+import { DangerButton, BigSuccessButton } from "./composition";
 
 // *** SPLITSCREEN DEMO ***
 // *** SPLITSCREEN DEMO ***
@@ -285,7 +286,10 @@ const nestedObject = {
 
 function App() {
   return (
-    <RecursiveComponent data={nestedObject} />
+    <>
+      <DangerButton text="Don't do it!" />
+      <BigSuccessButton text="Yes!!!" />
+    </>
   );
 }
 
